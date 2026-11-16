@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="EventosApp.Views.ResumoEventoPage"
+             Title="Resumo do Evento"
+             BackgroundColor="White">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="24" Spacing="14">
+
+            <Label Text="{Binding Nome}" FontSize="26" FontAttributes="Bold"
+                   TextColor="#512BD4" />
+
+            <BoxView HeightRequest="1" Color="LightGray" />
+
+            <Label TextColor="Black"
+                   Text="{Binding DataInicio, StringFormat='Início: {0:dd/MM/yyyy}'}" />
+            <Label TextColor="Black"
+                   Text="{Binding DataTermino, StringFormat='Término: {0:dd/MM/yyyy}'}" />
+            <Label TextColor="Black"
+                   Text="{Binding DuracaoTexto, StringFormat='Duração: {0}'}" />
+            <Label TextColor="Black"
+                   Text="{Binding Local, StringFormat='Local: {0}'}" />
+            <Label TextColor="Black"
+                   Text="{Binding NumeroParticipantes, StringFormat='Participantes: {0}'}" />
+            <Label TextColor="Black"
+                   Text="{Binding CustoPorParticipante, StringFormat='Custo por participante: {0:C}'}" />
+
+            <BoxView HeightRequest="1" Color="LightGray" />
+
+            <Label FontSize="22" FontAttributes="Bold" TextColor="DarkGreen"
+                   Text="{Binding CustoTotal, StringFormat='Custo total: {0:C}'}" />
+
+            <Button Text="Novo cadastro" Clicked="OnNovoCadastroClicked"
+                    BackgroundColor="#512BD4" TextColor="White" Margin="0,16,0,0" />
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

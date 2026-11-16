@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="EventosApp.Views.CadastroEventoPage"
+             Title="Cadastro de Evento"
+             BackgroundColor="White">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="24" Spacing="12">
+
+            <Label Text="Nome do evento" TextColor="Black" />
+            <Entry Text="{Binding Nome}" Placeholder="Ex.: Workshop de .NET MAUI"
+                   TextColor="Black" PlaceholderColor="Gray" />
+
+            <Label Text="Data de início" TextColor="Black" />
+            <DatePicker Date="{Binding DataInicio}" Format="dd/MM/yyyy" TextColor="Black" />
+
+            <Label Text="Data de término" TextColor="Black" />
+            <DatePicker Date="{Binding DataTermino}" Format="dd/MM/yyyy" TextColor="Black" />
+
+            <Label Text="Número de participantes" TextColor="Black" />
+            <Entry Text="{Binding NumeroParticipantes}" Keyboard="Numeric"
+                   Placeholder="0" TextColor="Black" PlaceholderColor="Gray" />
+
+            <Label Text="Local do evento" TextColor="Black" />
+            <Entry Text="{Binding Local}" Placeholder="Ex.: Centro de Convenções"
+                   TextColor="Black" PlaceholderColor="Gray" />
+
+            <Label Text="Custo por participante (R$)" TextColor="Black" />
+            <Entry Text="{Binding CustoPorParticipante}" Keyboard="Numeric"
+                   Placeholder="0,00" TextColor="Black" PlaceholderColor="Gray" />
+
+            <Label Text="{Binding DuracaoTexto, StringFormat='Duração: {0}'}"
+                   TextColor="DarkSlateGray" Margin="0,8,0,0" />
+            <Label Text="{Binding CustoTotal, StringFormat='Custo total: {0:C}'}"
+                   TextColor="DarkSlateGray" />
+
+            <Button Text="Cadastrar evento" Clicked="OnCadastrarClicked"
+                    BackgroundColor="#512BD4" TextColor="White" Margin="0,16,0,0" />
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
